@@ -1,0 +1,800 @@
+difference between react and angular?
+
+-   React is a library
+-   Angular is a framework
+
+Difference between library and framework?
+
+- jQuery, react all this are libraries
+- application will load into browser
+- library cannot manipulate the app but can create the app, framework can manipulate the app.
+- Framework is nothing but a bundle of libraries. It controls the application flow unlike library
+-  React uses DOM manipulations
+-  Angular uses MVC, MVVM 
+-  decoupled from DOM
+
+
+*   TO INSTALL WEB APPLICATION IN ANY FILE 
+
+-   npm init -y                     // it will instlal the package.json file
+
+
+
+NOTE:- you need to use react in one specific page, and link other files
+
+
+
+* TO INSTALL THE REACT DOM, REACT CORE AND EVERYTHING WE USE
+
+
+-   npm install react, react-dom        @babel/core     // babel is nothing but compiler
+
+-   Also you can download the cdn links from the react.org website and paste it on the html file, inorder to import react on the application
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+-   if javascript wants to access the id of the html, we use document.getElementById....Similarly, if react wants to use on HTML,
+    we use React.DOM.render
+
+
+
+-   NOW TO INSTALL THE  LIBRARIES OF THE REACT on the specific folder 
+
+    npm install --save react                // CORE LIBRARY
+    npm install --save react-dom            // DOM LIBRARY
+    npm install --save @babel/standalone    // BABEL LIBRARY FOR COMPILING
+    npm install bootstrap --save            // BOOTSTRAP LIBRARY
+    npm install boostrap-icon --save        // BOOTSTRAP ICON LIBRARY
+
+
+
+note:- React application is built with lots of component and every component is designed by javascript function or classes 
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+*   CREATE REACT APPLICATION BY USING "Create-React-App" Library
+
+-   Create-React-App is a tool that provides commands for building and managing react application
+
+- There are two techniques
+    1. Install "Create React App" tool by running the command below
+
+        npm install -g create-react-app         // this is globally install the react application tool
+
+        create-react-app your_app_name      
+
+    
+    2. Directly create react application by using "npx" by running the command,
+
+        npx create-react-app your_app_name
+
+
+    - Then open visual studio code,
+    - open terminal and run the command below
+
+        npm start   // this will start your react application meaning it will complile and start your react application hhtp://localhost:3000
+
+    
+    -   npm_modules contains library related the files installed through npm, all this libraries will be there in node_modules
+
+    -   public folder is nothing but static files like html, images
+
+    -   src folder contains dynamic files such as css, javscript, jquery
+
+    -   gitignore folder is used for configuring the application on the git to the cloud
+
+    -   package.json folder they contain information of dependencies
+
+    -   package.lock.json   they contain information of dependencies
+
+    -   Readme.md they help notes related the project, you can keep it over there
+
+
+    * Public folder
+
+    -> inside public folder there is a startup file called index.html
+
+    -> inside index.html, on the body section there is only a div along with the id
+
+    
+    * src folder
+
+    ->  inside src folder, there would a file called index.js
+    ->  inside index.js there would be a component 
+        [
+
+            ------
+            ------
+            ------
+        ]
+
+        and this component will be rendered into index.html on the public folder
+
+    -> NOTE:- we can create separate components on the react and altogether inject that components into the index.js and from index.js
+              render the component on index.html and it will display on the web browser
+
+    -> by default there would be an AppComponent, that would be separately designed and that AppComponent is kept inside index.js page and it
+        will render into the index.html and we will see that on the web brower
+
+     
+     -> A component is a combination of html, css and js 
+
+    -> React components are designed by using
+
+        JavaScript Functions
+        Javascript Classes
+
+
+*   CREATING NEW COMPONENT USING JS FUNCTIONS
+
+
+    -> Inside the function the return method uses the expression called JSX
+
+    meaning to bind the expression in javascript, we uses <h2> ${} </h2>
+    
+    but in JSX we uses <h2> {} </h2> to bind the expression and JSX allow 
+    only one container and there we can put multiple expressions.
+
+    -> To make a container in the JSX, we can use div, or emply container (<> </>) or <Fragment>
+
+    -> jsx will not allow void elements, meaning every HTML element defined as self ending or hav end tag
+
+
+*   CREATING NEW COMPONENT USING JAVASCRIPT CLASSES
+
+-> Class components gets the behavior from "React.Component" base class
+-> You have to create a javascript class that extends "React.Component" base class
+-> A class component can return presentation by using render method and also that uses jsx
+
+
+
+* Difference between class and function component
+
+->  Function component is stateless component in early versions of React
+->  Class component is state full component, bydefault it contains state
+->  State means to store and transfer values across components
+
+-> Function component doesn't contain hooks, while class comprises of hooks until 16.8 version
+-> Latest version provides hooks for function component
+
+-> Hooks are used to handle various phases of a components like 
+
+    Loading
+    Uploading
+    Destroying
+    State
+
+-> Varaibles and function cannot use in class
+
+-> But data can be stored in Properties
+-> Functionality is defined with methods
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+*   Data binding in React
+
+- Data binding is a technique used in web applications to access the data and bind to UI, and identify the changes in UI and update into data.
+
+-   Web appliactions support
+     One way Binding
+     Two way Binding
+
+-   React supports only "One Way Binding"
+
+-   Two way binding requires "Even Handling".
+
+-   Server Technologies support Two way binding by using frameworks like
+    MVC, MVP,MVVM
+
+-   Variables and Properties are immutable, meaning they can't change according to state and situation
+
+-   Hence you have to use "State" for component
+
+
+*   STATE IN FUNCTION COMPONENT
+
+->  State allows to store data and handle between request in a component
+->  It can maintain state for component, where you can store value and use across requests.
+
+
+Syntex:
+
+import {useState} from 'react';
+
+const [getter, setter] = useState()
+
+setter(value);      - set value into state
+
+{getter}            - get value from set
+
+
+question:- Why state is defined as "const"?
+
+because state requires initlization of memory. const defines initlization
+
+
+
+NOTE:-  const [product, setProduct]  useState({Name:"gagan"})      
+
+{Name:"gagan"}, this value would the initial value of the product
+
+
+
+onchange = "handleNameChange(this, event)"
+
+this => object realted properties
+event => event props
+
+But in react only event is allowed
+
+onchange = "handleNameChange(event)"
+
+Then how can we access the object related properties for that we use
+
+event.target.objProperty
+
+event.eventProperty
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+*   STATE WITH REACT CLASS COMPONENT
+
+-   React class component is a state full component. 
+-   It implicitly provides state for component.
+-   State is defined for component at the time of allocating memory for component and creating an object for component
+-   It is handled by the constructor of the class
+
+
+*   JAVASCRIPT CONSTRUCTOR RULES
+
+SuperClass
+{
+    constructor(){}
+
+}
+
+DerivedClass extends SuperClass
+{
+    constructor(){}
+}
+
+In react, constructor and super expects a parameter called props.
+
+If it is parameterized, you must need to pass
+
+
+this.state = {property: value}
+
+-   To store a new value or to assign value into state property you have to use the method called "setState()".
+
+setState({
+    property: newValue
+})
+
+-   Class component will not allow the events to handle state directly. 
+
+-   Class component can handle events directly without any state function.
+
+-   Events cannot handle state of class component directly, they need a binding technique that will bind the events to class components
+
+-   Event requires a "binding" technique that bind the event with class
+
+    1. You can bind in constructor
+
+        this.handleInsertClick = this.handleInsertClick.bind(this);  
+
+    2. You can binding in event handler
+
+    <button onClick = {this.handleInsertClick(this)}>
+
+
+    3. You can configure a callback in event handler           // preffered method
+
+        <button onClick = {()=> this.handleInsertClick()}>
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+-   Every item in iterator requires a "Key", in React it is mandatory to define a unique key for every iterating element.
+ 
+
+ *  Fetch Data from API and present data
+
+ -  React can use various techniques for interacting with API. 
+    
+-   It can use the Javascript "fetch()" method
+
+-   It can use jQuery "$.ajax()"
+
+-   it can use 3rd party like,
+
+        Axios
+        WhatwgFetch  
+
+- In fetch method you have to convert into JSON explicitly
+- It requires configuration for CORS explicitly
+
+
+-   In Axios, it return data in JSON format
+
+-   It handles CORS 
+
+-   Handle XSS (Cross site scripting attacks)
+
+-   It is More secured
+
+HOOKS
+
+Mount Stage:- actions to perform when component is loaded into memory
+Update stage:- actions to perform on interactions like events from users
+Unmount stage:- action to perform when component is unloaded
+
+ CLASS
+
+ - componentDidMount()
+ - componentDidUpdate()
+ - componentWillUnmount()
+
+ function
+ useEffect() is the hook, that we import in the function component used to define actions to perform when the component is mounted
+
+ 
+
+  useEffect(()=> {
+        effect
+        return()=>{
+            cleanup
+        };
+    },[input]);
+
+    it is a callback function that returning some functionality, and array indicated after returning the data, it will stop,
+
+    but useEffect will continue to run the data and performing that functionality, and to restrict that....... 
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+*   Axios
+
+-   axios({
+    method: 'Get|POST',
+
+    URL: 'API_URL',
+
+    data: 'Data to Post'
+})
+
+
+OR YOU CAN WRITE
+
+axios.get(url).then(function(response){});
+
+axios.post(url, data);
+[
+axios.all({
+    axios.get(url),             // multiple api
+    axios.get(url),             // multiple api
+    
+})
+
+]
+
+npm instal axios --save
+
+
+-   Axios response object comprises of all response details like
+
+    statusCode
+    statusText
+    header
+    Data
+
+
+*   EVENTS IN REACT
+
+-   React uses all js events, 
+-   React uses "camel case" for events
+    e.g. onChange, onClick ....etc
+
+
+-   Event handler can't use "this" keyword as event argument
+
+-   Only event object is allowed
+
+    e.eventProperties;
+
+    e.target.objectProperties;
+
+
+    NOTE:- in multiple events, advised to use switch statements
+    
+    NOTE:- React is not using browser events, these are virtual events known as synthetic events
+
+    e.preventDefault - it is the predefined method meaning by default it has some functionality and by it will prevent that funcitonality
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    3rd Party Form Library
+
+    FORMIK
+
+   
+
+    we need to use formik library and take useFormik
+
+    It provides attributes like
+
+    -   initialValues
+    -   validate
+    -   values
+    -   error
+    -   touched
+    -   handleChange
+    -   handleSubmit
+    -   handleBlur
+    -   isSubmitting
+
+    useFormik({
+        initalValues:
+        errors:
+        validate:
+        handleSubmit:
+        
+    })
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+VALIDATION
+- Form State validation
+    verifying all fields in the form and deciding to submit form or not. 
+
+-  Input State Validation
+    verifying every field individually
+
+Formik Library
+
+- Change events
+    
+    handleChange
+    setFieldValue
+    setValues
+
+- Blur
+    handleBlur
+    setTouched
+    setFieldTouched
+
+- Submit
+    handleSubmit
+    submitForm
+    
+
+Yup library
+
+-   yup provides validation schema or structure it comprises of object with key and value
+
+key refers to validation error and value refers to validation message
+
+yup provides readymade function to validate the value.html
+
+Name: yup.DataType.DataType()            // which datatype youy want to allow
+
+e.g. 
+
+Name: yup.boolean()
+Name: yup.string().min(4).max(10).require       // meaning it is of string with min 4 charac and max 10 charac and it is required
+
+Email:yup.string().required().email()
+
+
+Validation COmponent can display the error message by
+
+<ErrorMessage name="Name">
+
+
+
+// Yup makes validation so simple
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+* FORMIK COMPONENTS
+
+<Formik>
+<Form>
+<Field>
+<ErrorMessage>
+
+
+useFormik - initialvalues, validationschema, onsubmit
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+* Routing 
+
+- It is a technicique used in web application to configure user and SEO friendly URLS
+
+without Routing, url looks like
+
+htt[://www.amazon.com.in/electronics.html?category=mobiles&model=samsung&minPrice=12000
+
+with Routing, url looks like,
+
+http://www.amazon.in/electronics/mobiles/samsung/12000
+
+meaning it is easy to configure this
+
+
+-   React uses Ajax in routing
+-   Without reloading the complete page- new details are added to page.
+-   user will stay on one page and get access to everything on to the page.
+
+
+To use Routing, we need to install library called,
+
+npm install react-router-dom
+
+And it will provide,
+
+Router
+Route
+Switch
+Redeirect
+Link        // we use this in place of <a> tag to navigate to different page in SPA
+
+
+wild cards routes, generic routes....they indicate what should happened when user entered something and not available
+
+so for that we need to write        path="*"
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+* Route Parameters
+
+-   e.g. http://www.amazon.in/electronics.html?paramName=value&paraName=value
+
+but it is simplified
+
+http://www.amazon.in/electronics/value1/value2/value3
+
+
+<Route path="products/:id/:name/:price">
+
+and we need to pass in the url like
+
+http://localhost:products/1/tv/25000
+
+useParams() - it is a hook and it is a member of react roter dom and it is an object that returns all route params
+
+Hooks are basically features of class based components in function based components
+
+
+commonly used react hooks are useState, useEffect, useContext, useRef
+
+useEffect is used for side effect when something happens
+
+e.g. useEffect(()=>{
+    console.log('render')
+}[])
+
+
+so whenever we render something, the function inside useEffect will run
+
+also we want to run useEffect() when any specific things changes
+
+e.g.
+
+useEffect(()=>{
+    console.log('render')
+}[resourceType] )                   // meaning whenever resource type changes, it will change
+
+
+
+
+        <Link to="/categories">Back to Categories</Link>
+    <div className= "d-flex flex-wrap flex-row" style={{height:'auto', overflow:'auto'}}>
+    {
+        products.map(product=>
+            <div className="card m-2" key = {product.id} style={{width:'200px'}}>
+                <img className=" -img-top" src={product.image} alt={product.title} height="200"/>
+                
+                <div className="card-header" style = {{height:'150px'}}>
+                    <p>{product.title}</p>
+                </div>
+
+                <div className="card footer">
+                    <p>{"$"}{product.price}</p>
+                    <button className="btn btn-primary w-100">
+                    <Link className = "btn btn-link">more...</Link>
+                    <span className="bi bi-Cart2"></span>
+                    Add to Cart
+                    </button>
+                </div>
+            </div>
+        )
+    }
+</div>
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+useHistory()
+ 
+- use history is the hook will return history object of your browser, it can push into specific path, it will automatically navigate to the particular location
+
+history.push('path')
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+material related bootstrap website
+
+https://mui.com/
+
+ npm install @material-ui/core --save
+
+telerik.com     // 3rd party modern UI made easy
+
+Dialog - Moda, Button
+
+Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField
+
+Button
+
+
+In react, we have to use
+
+useState()
+events 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+* Life cycle hooks
+
+-   Every component comprises of 3 phases, 
+    mount phases    
+    update phase
+    unmount phase
+
+    - on the mount, first constructor is called, and inside it perform the event call componentDidMount and it is replaced with useEffect in functions
+
+    *   Mounting
+
+    -   constructor
+    -   getDefaultProps
+    -   getInitialState
+    -   componentWillMount()
+    -   render
+    -   componentDidMount()
+
+
+    *   Updating 
+
+    -   shouldComponentUpdate()
+    -   componentWillUpdate()
+    -   render
+    -   componentDidUpdate
+
+    *   Unmounting 
+
+    -   destruct object
+    -   destroy the memory allocated with the objects
+    -   componentWillUnmount()
+    -   
+
+    Above is the old versions
+
+
+Function Component is using the Hooks
+
+
+From the LifeCycleDemo.js file
+
+Login 
+
+
+userid 
+password                                           
+    |valid
+success component requested
+success component mounted
+
+
+
+password
+|invalid
+error component requested
+unmount success component
+Mount Error component
+
+
+
+*   Data to be loaded in the API using mount updata and unmount
+
+-   mount
+    Request data from api and load into reference
+
+-   update 
+
+    onclick, change, blur events, it will be on the update state
+
+-   unmount
+    When we want to disonnect from the API   
+
+
+
+* External State Management - Redux, useReducer for managing the state
+
+-   this is the old version that depends on external components redux
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+useHistory
+useEffect
+useParams
+useContext
+useReduce
+
+
+-   These are new methods we implement in the react
+
+-   The only problem in the states is we cannot we cannot use the same data in the another component
+
+
+*   useContext
+
+-    It is nothiing but the context memory that is available for the component and the child component, meaning the data can be transported as the child
+    level at any component
+
+-   For that, we need to create createContext() method will create the memory, and in the memory you can store the value, and you can access the value
+
+-   There are two components for that, injector and provider
+
+-   Provider will locate the memory and find the value and injector injects the value in the component.
+
+
+* useReduce
+
+-   we have a js library redux, that helps maintain application level memmory just like we have useReducer that takes....
+
+    1. action           // action defines action to perform
+    2. dispatch         // dispatch defines the data to store
+
+    e.g. of a concept useReducer
+
+    In fb, we upload a photo and posted on the timeline, and it can be viewed by multiple users
+
+    - user1, user2......etc
+
+    - And this people can like the photo, and likes counter starts
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+* TypeScript
+
+- It is the language that is not built-in in js, so we need to install the TypeScript
+
+- open the cmd and type     npm install -g typescript
+
+tsc -v      // to see the version of typescript
+

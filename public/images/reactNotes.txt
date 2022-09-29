@@ -1,0 +1,87 @@
+react is a single page application, meaning the content has been changed but the page remains the same
+
+e.g. flipcart, netflix
+
+by writing & you can get many symbols on the HTML 
+
+<ol type="" starts ="">
+
+whenever we install any pacakge, it will generate node module and packgae json objects into
+
+the packages are nothing but the dependencies or called the supporting package
+
+we can install the react app in many ways, here we use the longer way to install the react app, by downloading npm i "name of the react app"
+
+the shortcut command for creating the react app is package
+
+npx create-react-app appname
+
+This is one step npm code to install the react app
+
+
+-   there is also two line npm code to install the react appname
+
+
+npm i -g create-react-app 
+
+then go inside the folder using cmd and
+
+create-react-app appname
+
+
+
+
+
+/////STEP TO RUN REACT APP////STEP
+
+npm start
+
+
+
+
+react   -> it is the main library
+react-dom   -> used to render the content
+react-scripts -> react script help to run the application
+
+are the main package we require in the react while coding.
+
+
+
+-THREE TYPES OF REACT COMPONENT
+
+1. class component
+2. functional component
+3. hooks component
+
+
+* Class component
+- logical component         ( use for calling API, writing logic, display purpose)
+- they can maintain state
+- class cannot return(), class have a method called render() and inside the render, it returns
+
+* Functional component
+- Dumb component            (use for display purpose)
+- they cannot maintain state
+
+
+
+GITHUB
+
+-> create repository for
+-> readme file
+
+
+STATE AND PROPS
+
+STATE
+- state act like a local component or variable
+- every component can have its own state
+- state can be acessible in same component or nested        // nested meaning it is connected....meaning export import thing
+- we can update the value of the state
+
+PROPS
+
+- Props help to transfer the data
+- Data can be transfer in between nested components
+- We cannot update the value of state
+
